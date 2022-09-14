@@ -19,4 +19,53 @@ Remove the null values from the data
 Save the Clean data to the file
 
 # CODE
+~~~
+#for data set Data_set.csv
+import pandas as pd
+import numpy as np
+import seaborn as sns
+df=pd.read_csv("Data_set.csv")
+df
+df.info()
+df.columns
+df.isnull().sum()
+df['show_name']=df['show_name'].fillna(df['show_name'].mode()[0])  
+df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
+df['original_network']=df['original_network'].fillna(df['original_network'].mode()[0])
+df['rating']=df['rating'].fillna(df['rating'].mean())   
+df['current_overall_rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
+df['watchers']=df['watchers'].fillna(df['watchers'].median())
+df.isnull().sum()
+df.info()
+~~~
+
+~~~
+#for dataset Loan_data.csv
+import pandas as pd
+import numpy as np
+import seaborn as sns
+df=pd.read_csv("Loan_data.csv")
+df.info()
+df.head()
+df.isnull().sum()
+df['Gender']=df['Gender'].fillna(df['Gender'].mode()[0])
+df['Dependents']=df['Dependents'].fillna(df['Dependents'].mode()[0])
+df['Self_Employed']=df['Self_Employed'].fillna(df['Self_Employed'].mode()[0])
+df['LoanAmount']=df['LoanAmount'].fillna(df['LoanAmount'].mode()[0])
+df['Loan_Amount_Term']=df['Loan_Amount_Term'].fillna(df['Loan_Amount_Term'].median())
+df['Credit_History']=df['Credit_History'].fillna(df['Credit_History'].median())
+df.isnull().sum()
+df.info()
+~~~
 # OUPUT
+## For dataset Data_set.csv
+### Before Cleaning
+![](1.jpg)
+### After Cleaning
+![](2.jpg)
+
+## For dataset Loan_data.csv
+### Before Cleaning
+![](3.jpg)
+### After Cleaning
+![](4.jpg)
