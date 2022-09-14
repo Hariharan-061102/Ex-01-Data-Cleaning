@@ -20,6 +20,8 @@ Save the Clean data to the file
 
 # CODE
 ~~~
+#Name:M.Hariharan
+#Reg.no:212221230034
 #for data set Data_set.csv
 import pandas as pd
 import numpy as np
